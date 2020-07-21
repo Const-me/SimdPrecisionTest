@@ -4,10 +4,15 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Random.cpp" />
+    <ClCompile Include="rcppsErrorSummary.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Random.hpp" />
     <ClInclude Include="VectorWriter.hpp" />
+    <ClInclude Include="rcppsErrorSummary.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="NatvisFile.natvis" />
   </ItemGroup>
 </Project>

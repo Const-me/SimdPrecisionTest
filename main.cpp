@@ -88,12 +88,19 @@ struct TestConvert : GeneratorBase
 	}
 };
 
-int main()
+void saveExactMathBinaries()
 {
 	CreateDirectory( destPath, nullptr );
 	generate<TestSum>( L"vaddps" );
 	generate<TestMul>( L"vmulps" );
 	generate<TestFma>( L"vfmadd" );
 	generate<TestConvert>( L"vcvtps2dq" );
+}
+#include "rcppsErrorSummary.h"
+
+int main()
+{
+	// saveExactMathBinaries();
+	rcppsErrorSummary();
 	return 0;
 }
