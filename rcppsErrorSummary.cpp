@@ -83,7 +83,7 @@ __forceinline __m128i vget_low( __m256i x )
 // Get high half of AVX register; AMD64 doesn't have register names for higher halves, this compiles into an extract instruction.
 __forceinline __m128i vget_high( __m256i x )
 {
-	return _mm256_extractf128_si256( x, 1 );
+	return _mm256_extracti128_si256( x, 1 );
 }
 
 template<int lane16, int lane32>
@@ -198,7 +198,7 @@ static void print( int index, const Bucket& b )
 		printf( "2^%i", exponent - 127 );
 
 	// Counters
-	uint32_t total = b.counts[ 0 ] + b.counts[ 1 ] + b.counts[ 2 ];
+	const uint32_t total = b.counts[ 0 ] + b.counts[ 1 ] + b.counts[ 2 ];
 	printf( "\t%i\t", total );
 	for( int i = 0; i < 3; i++ )
 		printf( "%i\t", b.counts[ i ] );
