@@ -227,7 +227,7 @@ void rcppsErrorSummary()
 			computeChunk<true>( i, ctx );
 	}
 
-	// Marge per-thread results into the final one
+	// Merge per-thread results into the final one
 	ThreadContext result;
 	for( const auto& c : threads )
 		result.mergeFrom( c );
